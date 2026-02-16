@@ -62,7 +62,7 @@ func (ic *individualControl) build(individual *gedcom.IndividualRecord) error {
 	if ic.response.Ref.Sex != "M" && ic.response.Ref.Sex != "F" {
 		ic.response.Ref.Sex = "U"
 	}
-	
+
 	// Ensure Name array has at least one entry before accessing
 	if len(individual.Name) > 0 {
 		given, family := extractNames(individual.Name[0].Name)
@@ -167,8 +167,8 @@ func (ic *individualControl) newFamilyLinkResponse(flr *gedcom.FamilyLinkRecord)
 	}
 
 	response := &familyLinkResponse{
-		ID:        strings.ToLower(flr.Family.Xref),
-		Pedigree:  flr.Type,
+		ID:       strings.ToLower(flr.Family.Xref),
+		Pedigree: flr.Type,
 	}
 
 	if flr.Family.Husband != nil {

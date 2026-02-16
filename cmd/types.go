@@ -47,12 +47,12 @@ type familyControl struct {
 type familyIndex map[string]*familyReferenceResponse
 
 type familyLinkResponse struct {
-	ID        string                       `json:"id"`
-	Pedigree  string                       `json:"pedigree"`
-	Events    []*eventResponse             `json:"events"`
-	Mother    *individualReferenceResponse `json:"mother"`
-	Father    *individualReferenceResponse `json:"father"`
-	Children  individualReferenceResponses `json:"children"`
+	ID       string                       `json:"id"`
+	Pedigree string                       `json:"pedigree"`
+	Events   []*eventResponse             `json:"events"`
+	Mother   *individualReferenceResponse `json:"mother"`
+	Father   *individualReferenceResponse `json:"father"`
+	Children individualReferenceResponses `json:"children"`
 }
 
 type familyReferenceResponse struct {

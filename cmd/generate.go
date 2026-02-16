@@ -13,7 +13,7 @@ import (
 var tagTable map[string]string
 
 // Generate reads the GEDCOM file and builds the Hugo input files.
-//noinspection GoUnusedExportedFunction
+// noinspection GoUnusedExportedFunction
 func Generate(cx *cli.Context) error {
 	tagTable = map[string]string{
 		"BAPM":  "Baptism",

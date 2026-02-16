@@ -206,5 +206,5 @@ func getPhotoKeyFromObject(o *gedcom.MediaRecord) string {
 	if len(o.File) > 0 {
 		return "p" + strings.ToLower(strings.Replace(filepath.Base(o.File[0].Name), ".", "", -1))
 	}
-	return "";
+	return ""
 }
