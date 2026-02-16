@@ -5,11 +5,14 @@
 echo "Testing gedcom2hugo demo..."
 echo ""
 
+# Get the directory where the script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
 # Check if gedcom2hugo binary exists
 if [ ! -f ../gedcom2hugo ]; then
     echo "Building gedcom2hugo..."
-    cd .. && go build -o gedcom2hugo main.go
-    cd demo
+    (cd .. && go build -o gedcom2hugo main.go)
 fi
 
 echo "✓ gedcom2hugo binary found"
