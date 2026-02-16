@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 
-	"./cmd"
-	"github.com/urfave/cli"
+	"github.com/Tiliavir/gedcom2hugo/cmd"
+	"github.com/urfave/cli/v2"
 )
 
 const version = "0.0.0.1"

@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/iand/gedcom"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 )
 
 type apiControl struct {
