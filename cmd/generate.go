@@ -3,11 +3,11 @@ package cmd
 import (
 	"bytes"
 	"errors"
-	"github.com/iand/gedcom"
-	"github.com/urfave/cli"
-	"io/ioutil"
 	"os"
 	"path/filepath"
+
+	"github.com/iand/gedcom"
+	"github.com/urfave/cli/v2"
 )
 
 var tagTable map[string]string
@@ -89,7 +89,7 @@ func Generate(cx *cli.Context) error {
 		return cli.Exit(err, 1)
 	}
 
-	err = configureForJsonHeaders(api, err)
+	err = configureForJsonHeaders(api)
 	if err != nil {
 		return cli.Exit(err, 1)
 	}
@@ -97,23 +97,16 @@ func Generate(cx *cli.Context) error {
 	return nil
 }
 
-func configureForJsonHeaders(api *apiControl, err error) error {
+func configureForJsonHeaders(api *apiControl) error {
 	headers := filepath.Join(api.cx.String("project"), "/static/api/_headers")
 	file, err := os.Create(headers)
-	if file == nil {
-		return nil
-	}
 	if err != nil {
-		_ = file.Close()
 		return err
 	}
+	defer file.Close()
+
 	_, err = file.Write([]byte("/*  Access-Control-Allow-Origin: *  content-type: application/json; charset=utf-8"))
-	if err != nil {
-		_ = file.Close()
-		return err
-	}
-	_ = file.Close()
-	return nil
+	return err
 }
 
 // readGedcom reads the GEDCOM file specified in the context into memory.
@@ -124,7 +117,7 @@ func readGedcom(cx *cli.Context) (*gedcom.Gedcom, error) {
 		return gc, errors.New("no GEDCOM file specified for input")
 	}
 
-	data, err := ioutil.ReadFile(cx.String("gedcom"))
+	data, err := os.ReadFile(cx.String("gedcom"))
 	if err != nil {
 		return gc, err
 	}
