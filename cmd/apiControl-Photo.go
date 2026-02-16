@@ -1,14 +1,14 @@
 package cmd
 
 import (
+	"encoding/json"
 	"fmt"
 	"html/template"
 	"image"
+	"log"
 	"os"
 	"path/filepath"
 	"strings"
-
-	"encoding/json"
 
 	"github.com/iand/gedcom"
 )
@@ -35,17 +35,17 @@ func (api *apiControl) addPhoto(o *gedcom.MediaRecord) *photoResponse {
 			}
 
 			file, err := os.Open(record.Name)
+			if err != nil {
+				log.Printf("Warning: Unable to open photo file %s: %v\n", record.Name, err)
+				return api.photos[key]
+			}
 			defer func(file *os.File) {
 				_ = file.Close()
 			}(file)
-			if err != nil {
-				fmt.Printf("%v\n", err)
-				return api.photos[key]
-			}
 
-			img, _, err := image.DecodeConfig(file) // Image Struct
+			img, _, err := image.DecodeConfig(file)
 			if err != nil {
-				fmt.Printf("hsgdhajsgdjhas %s: %v\n", record.Name, err)
+				log.Printf("Warning: Unable to decode image %s: %v\n", record.Name, err)
 				return api.photos[key]
 			}
 
@@ -108,7 +108,7 @@ func (api *apiControl) buildFromGedcom(g *gedcom.Gedcom) error {
 
 func (api *apiControl) exportPhotoAPI() error {
 	photoAPIDir := filepath.Join(api.cx.String("project"), "static", "api", "photo")
-	err := os.MkdirAll(photoAPIDir, 0777)
+	err := os.MkdirAll(photoAPIDir, 0755)
 	if err != nil {
 		return err
 	}
@@ -177,7 +177,7 @@ $(document).ready(function(){
 `
 
 	photoDir := filepath.Join(api.cx.String("project"), "content", "media")
-	err := os.MkdirAll(photoDir, 0777)
+	err := os.MkdirAll(photoDir, 0755)
 	if err != nil {
 		return err
 	}

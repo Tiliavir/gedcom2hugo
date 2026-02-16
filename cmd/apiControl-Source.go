@@ -121,7 +121,7 @@ func GetReferenceString(s *gedcom.SourceRecord) string {
 
 func (api *apiControl) exportSourceAPI() error {
 	sourceAPIDir := filepath.Join(api.cx.String("project"), "static", "api", "source")
-	err := os.MkdirAll(sourceAPIDir, 0777)
+	err := os.MkdirAll(sourceAPIDir, 0755)
 	if err != nil {
 		return err
 	}
@@ -171,7 +171,7 @@ $(document).ready(function(){
 `
 
 	sourceDir := filepath.Join(api.cx.String("project"), "content", "source")
-	err := os.MkdirAll(sourceDir, 0777)
+	err := os.MkdirAll(sourceDir, 0755)
 	if err != nil {
 		return err
 	}
