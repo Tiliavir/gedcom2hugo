@@ -39,9 +39,7 @@ func (api *apiControl) addPhoto(o *gedcom.MediaRecord) *photoResponse {
 				log.Printf("Warning: Unable to open photo file %s: %v\n", record.Name, err)
 				return api.photos[key]
 			}
-			defer func(file *os.File) {
-				_ = file.Close()
-			}(file)
+			defer file.Close()
 
 			img, _, err := image.DecodeConfig(file)
 			if err != nil {
