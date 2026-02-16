@@ -158,8 +158,8 @@ func (ic *individualControl) newFamilyLinkResponse(flr *gedcom.FamilyLinkRecord)
 	}
 
 	response := &familyLinkResponse{
-		ID:        strings.ToLower(flr.Family.Xref),
-		Pedigree:  flr.Type,
+		ID:       strings.ToLower(flr.Family.Xref),
+		Pedigree: flr.Type,
 	}
 
 	if flr.Family.Husband != nil {

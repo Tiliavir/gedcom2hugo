@@ -13,7 +13,7 @@ import (
 var tagTable map[string]string
 
 // Generate reads the GEDCOM file and builds the Hugo input files.
-//noinspection GoUnusedExportedFunction
+// noinspection GoUnusedExportedFunction
 func Generate(cx *cli.Context) error {
 	tagTable = map[string]string{
 		"BAPM":  "Baptism",
@@ -107,7 +107,7 @@ func configureForJsonHeaders(api *apiControl, err error) error {
 		_ = file.Close()
 		return err
 	}
-	_, err = file.Write([]byte("/*  Access-Control-Allow-Origin: *  content-type: application/json; charset=utf-8"))
+	_, err = file.Write([]byte("/*\n  Access-Control-Allow-Origin: *\n  Content-Type: application/json; charset=utf-8"))
 	if err != nil {
 		_ = file.Close()
 		return err
