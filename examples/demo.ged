@@ -1,0 +1,72 @@
+0 HEAD
+1 SOUR gedcom2hugo-demo
+2 NAME Demo Family Tree
+2 VERS 1.0
+1 DEST ANY
+1 DATE 16 FEB 2026
+1 SUBM @SUBM1@
+1 FILE demo.ged
+1 GEDC
+2 VERS 5.5
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+0 @SUBM1@ SUBM
+1 NAME Demo Submitter
+0 @I1@ INDI
+1 NAME John /Smith/
+2 GIVN John
+2 SURN Smith
+1 SEX M
+1 BIRT
+2 DATE 15 MAR 1950
+2 PLAC New York, USA
+1 DEAT
+2 DATE 22 DEC 2020
+2 PLAC Miami, Florida, USA
+1 FAMS @F1@
+1 OCCU Software Engineer
+0 @I2@ INDI
+1 NAME Mary /Johnson/
+2 GIVN Mary
+2 SURN Johnson
+1 SEX F
+1 BIRT
+2 DATE 22 JUN 1952
+2 PLAC Boston, Massachusetts, USA
+1 FAMS @F1@
+1 OCCU Teacher
+0 @I3@ INDI
+1 NAME Jane /Smith/
+2 GIVN Jane
+2 SURN Smith
+1 SEX F
+1 BIRT
+2 DATE 10 APR 1975
+2 PLAC San Francisco, California, USA
+1 FAMC @F1@
+1 OCCU Doctor
+0 @I4@ INDI
+1 NAME Robert /Smith/
+2 GIVN Robert
+2 SURN Smith
+1 SEX M
+1 BIRT
+2 DATE 18 SEP 1978
+2 PLAC Seattle, Washington, USA
+1 FAMC @F1@
+1 OCCU Architect
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 CHIL @I3@
+1 CHIL @I4@
+1 MARR
+2 DATE 14 FEB 1974
+2 PLAC Las Vegas, Nevada, USA
+1 _CURRENT Y
+0 @S1@ SOUR
+1 TITL U.S. Census Records
+1 AUTH National Archives
+1 PUBL Washington, D.C.
+1 NOTE Census data from 1950-2020
+0 TRLR

@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"log"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -61,9 +62,17 @@ func (ic *individualControl) build(individual *gedcom.IndividualRecord) error {
 	if ic.response.Ref.Sex != "M" && ic.response.Ref.Sex != "F" {
 		ic.response.Ref.Sex = "U"
 	}
-	given, family := extractNames(individual.Name[0].Name)
-	ic.response.Ref.Name = fmt.Sprintf("%s %s", given, family)
-	ic.response.Ref.LastNames = append(ic.response.Ref.LastNames, family)
+
+	// Ensure Name array has at least one entry before accessing
+	if len(individual.Name) > 0 {
+		given, family := extractNames(individual.Name[0].Name)
+		ic.response.Ref.Name = fmt.Sprintf("%s %s", given, family)
+		ic.response.Ref.LastNames = append(ic.response.Ref.LastNames, family)
+	} else {
+		// Fallback to using Xref if no name is available
+		ic.response.Ref.Name = individual.Xref
+		log.Printf("Warning: Individual %s has no name\n", individual.Xref)
+	}
 
 	for i := range individual.UserDefined {
 		if individual.UserDefined[i].Tag == "_PHOTO" {
@@ -158,8 +167,8 @@ func (ic *individualControl) newFamilyLinkResponse(flr *gedcom.FamilyLinkRecord)
 	}
 
 	response := &familyLinkResponse{
-		ID:        strings.ToLower(flr.Family.Xref),
-		Pedigree:  flr.Type,
+		ID:       strings.ToLower(flr.Family.Xref),
+		Pedigree: flr.Type,
 	}
 
 	if flr.Family.Husband != nil {
@@ -240,7 +249,7 @@ func (ic *individualControl) addPhotos() error {
 }
 
 func (ic *individualControl) addTopPhoto() error {
-	if ic.individual.Media != nil {
+	if ic.individual.Media != nil && len(ic.individual.Media) > 0 {
 		p := ic.api.addPhoto(ic.individual.Media[0]) // Don't use addPhotoForIndividual() here, or there will be a duplicate on the photo page
 		ic.response.TopPhoto = p
 	}
