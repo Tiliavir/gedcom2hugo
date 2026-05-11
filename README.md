@@ -22,10 +22,14 @@ The demo includes:
 - A complete Hugo site with generated content
 - Custom theme and styling for displaying genealogical data
 - Interactive JavaScript-based display of family relationships
+- Go tests to validate the demo functionality
 
 To try the demo:
 
 ```bash
+# Run the tests to verify everything works
+go test ./demo -v
+
 # Generate the demo content (already done, but you can regenerate)
 ./gedcom2hugo -gedcom demo/sample-family.ged -project demo/hugo-site
 

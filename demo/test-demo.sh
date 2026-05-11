@@ -1,6 +1,13 @@
 #!/bin/bash
 
 # Test script for the demo
+# 
+# NOTE: Go tests (demo_test.go) are the recommended way to test the demo.
+# This bash script is provided for manual validation and convenience.
+# 
+# To run Go tests instead:
+#   cd demo && go test -v
+#   or from project root: go test ./demo -v
 
 echo "Testing gedcom2hugo demo..."
 echo ""

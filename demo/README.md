@@ -6,6 +6,40 @@ This directory contains a complete demonstration of gedcom2hugo in action.
 
 - `sample-family.ged` - A sample GEDCOM file containing a fictional family tree with 6 individuals
 - `hugo-site/` - A complete Hugo site with generated genealogy content
+- `demo_test.go` - Go tests to validate the demo (recommended)
+- `test-demo.sh` - Bash script for manual validation
+
+## Testing the Demo
+
+### Using Go Tests (Recommended)
+
+Run the Go tests to verify the demo is working correctly:
+
+```bash
+cd demo
+go test -v
+```
+
+Or from the project root:
+
+```bash
+go test ./demo -v
+```
+
+The tests verify:
+- All expected files exist
+- Person and family pages are generated
+- JSON API files are valid and well-formed
+- JSON structure contains expected fields
+
+### Using the Bash Script
+
+Alternatively, you can use the bash script for manual validation:
+
+```bash
+cd demo
+./test-demo.sh
+```
 
 ## The Sample Family Tree
 
