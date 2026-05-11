@@ -4,17 +4,21 @@
 
 <h2>Browse the Family Tree</h2>
 
-<h3>People</h3>
+{{ with .Site.GetPage "section" "person" }}
+<h3><a href="{{ .RelPermalink }}">People</a></h3>
 <ul>
-{{ range where .Site.Pages "Section" "person" }}
+{{ range .RegularPages.ByTitle }}
     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 {{ end }}
 </ul>
+{{ end }}
 
-<h3>Families</h3>
+{{ with .Site.GetPage "section" "family" }}
+<h3><a href="{{ .RelPermalink }}">Families</a></h3>
 <ul>
-{{ range where .Site.Pages "Section" "family" }}
+{{ range .RegularPages.ByTitle }}
     <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 {{ end }}
 </ul>
+{{ end }}
 {{ end }}
