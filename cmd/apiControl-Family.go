@@ -102,7 +102,7 @@ func (api *apiControl) getFamilyIndexEntry(id string) (*familyReferenceResponse,
 
 func (api *apiControl) exportFamilyAPI() error {
 	familyAPIDir := filepath.Join(api.cx.String("project"), "static", "api", "family")
-	err := os.MkdirAll(familyAPIDir, 0777)
+	err := os.MkdirAll(familyAPIDir, 0755)
 	if err != nil {
 		return err
 	}
@@ -157,7 +157,7 @@ $(document).ready(function(){
 `
 
 	familyDir := filepath.Join(api.cx.String("project"), "content", "family")
-	err := os.MkdirAll(familyDir, 0777)
+	err := os.MkdirAll(familyDir, 0755)
 	if err != nil {
 		return err
 	}

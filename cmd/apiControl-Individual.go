@@ -67,7 +67,7 @@ func (api *apiControl) addIndividualCitations(individualID string, citations []*
 
 func (api *apiControl) exportIndividualAPI() error {
 	individualAPIDir := filepath.Join(api.cx.String("project"), "static", "api", "individual")
-	err := os.MkdirAll(individualAPIDir, 0777)
+	err := os.MkdirAll(individualAPIDir, 0755)
 	if err != nil {
 		return err
 	}
@@ -126,7 +126,7 @@ $(document).ready(function(){
 `
 
 	personDir := filepath.Join(api.cx.String("project"), "content", "person")
-	err := os.MkdirAll(personDir, 0777)
+	err := os.MkdirAll(personDir, 0755)
 	if err != nil {
 		return err
 	}
