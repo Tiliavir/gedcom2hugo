@@ -105,7 +105,7 @@ func configureForJsonHeaders(api *apiControl) error {
 	}
 	defer file.Close()
 
-	_, err = file.Write([]byte("/*  Access-Control-Allow-Origin: *  content-type: application/json; charset=utf-8"))
+	_, err = file.Write([]byte("/*\n  Access-Control-Allow-Origin: *\n  Content-Type: application/json; charset=utf-8"))
 	return err
 }
 

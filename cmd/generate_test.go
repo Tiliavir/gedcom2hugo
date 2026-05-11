@@ -171,7 +171,7 @@ func TestConfigureForJsonHeaders(t *testing.T) {
 		t.Fatalf("Failed to read headers file: %v", err)
 	}
 
-	expectedContent := "/*  Access-Control-Allow-Origin: *  content-type: application/json; charset=utf-8"
+	expectedContent := "/*\n  Access-Control-Allow-Origin: *\n  Content-Type: application/json; charset=utf-8"
 	if string(content) != expectedContent {
 		t.Errorf("Expected headers content '%s', got '%s'", expectedContent, string(content))
 	}

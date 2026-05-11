@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smith Family Tree - Demo</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .demo-note {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+    <main>
+        <h1>Smith Family Tree - Demo</h1>
+        
+        <div class="demo-note">
+            <strong>Note:</strong> This is a static demo page. For the full experience with Hugo rendering, 
+            run <code>hugo server</code> in this directory.
+        </div>
+        
+        <p>Welcome to the Smith Family Tree demonstration site! This site showcases how <strong>gedcom2hugo</strong> 
+        converts GEDCOM genealogy data into a beautiful Hugo static site.</p>
+
+        <h2>About This Demo</h2>
+        <p>This demo contains a sample family tree with:</p>
+        <ul>
+            <li>6 individuals across 2 generations</li>
+            <li>2 family units</li>
+            <li>Life events (births, deaths, marriages)</li>
+            <li>Occupations and locations</li>
+        </ul>
+
+        <h2>Browse the Family Tree</h2>
+
+        <h3>People</h3>
+        <ul>
+            <li><a href="/i1/">John Smith (1 JAN 1950 - 15 JUN 2020)</a></li>
+            <li><a href="/i2/">Mary Johnson (15 MAR 1952 - )</a></li>
+            <li><a href="/i3/">Robert Smith (10 JUL 1975 - )</a></li>
+            <li><a href="/i4/">Sarah Brown (22 SEP 1978 - )</a></li>
+            <li><a href="/i5/">Emily Smith (5 APR 2005 - )</a></li>
+            <li><a href="/i6/">James Smith (18 NOV 2008 - )</a></li>
+        </ul>
+
+        <h3>Families</h3>
+        <ul>
+            <li><a href="/f1/">Smith/Johnson Family</a></li>
+            <li><a href="/f2/">Smith/Brown Family</a></li>
+        </ul>
+
+        <h2>How to View</h2>
+        <p>You can view this demo in several ways:</p>
+        <ol>
+            <li><strong>With Hugo:</strong> Run <code>hugo server</code> in the <code>demo/hugo-site</code> directory</li>
+            <li><strong>Static files:</strong> The person pages above will load the JSON data and display it dynamically</li>
+            <li><strong>Direct API access:</strong> View the JSON files in <code>/api/individual/</code> and <code>/api/family/</code></li>
+        </ol>
+
+        <h2>What Gets Generated</h2>
+        <p>When you run gedcom2hugo, it creates:</p>
+        <ul>
+            <li>Markdown content files for each person and family</li>
+            <li>JSON API files with structured data</li>
+            <li>HTML pages that dynamically load and display the genealogical data</li>
+        </ul>
+    </main>
+</body>
+</html>

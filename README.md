@@ -148,6 +148,33 @@ This project follows standard Go formatting conventions:
 go fmt ./...
 ```
 
+## Demo
+
+A complete working demo is available in the `/demo` directory! This demonstrates how gedcom2hugo converts GEDCOM genealogy data into a Hugo static site.
+
+The demo includes:
+- A sample GEDCOM file with a fictional family tree (6 individuals across 2 generations)
+- A complete Hugo site with generated content
+- Custom theme and styling for displaying genealogical data
+- Interactive JavaScript-based display of family relationships
+- Go tests to validate the demo functionality
+
+To try the demo:
+
+```bash
+# Run the tests to verify everything works
+go test ./demo -v
+
+# Generate the demo content (already done, but you can regenerate)
+./gedcom2hugo -gedcom demo/sample-family.ged -project demo/hugo-site
+
+# View the site with Hugo
+cd demo/hugo-site
+hugo server
+```
+
+See `/demo/README.md` for detailed information about the demo and how to use it.
+
 ## Contribution
 
 Contribution is highly welcome! There is just one rule: use `go fmt` before committing. I don't want to discuss code style, it's boring. There is a standard, follow it.
