@@ -2,7 +2,11 @@ baseURL = "https://tektsu.github.io/gedcom2hugo/"
 languageCode = "en-us"
 title = "Smith Family Tree - Demo"
 theme = "genealogy"
-relativeURLs = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
   description = "A demonstration of gedcom2hugo - converting GEDCOM genealogy data to Hugo static site"
