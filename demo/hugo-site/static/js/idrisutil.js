@@ -11,20 +11,25 @@ function formatPlace(placeStr) {
 }
 
 function createPersonLink(person) {
-    if (!person || !person.ID) return 'Unknown';
-    var name = person.Name || 'Unknown';
-    return '<a href="../' + person.ID + '/">' + name + '</a>';
+    var id = person && (person.id || person.ID);
+    if (!id) return 'Unknown';
+    var name = (person && (person.name || person.Name)) || 'Unknown';
+    return '<a href="../' + id + '/">' + name + '</a>';
 }
 
 function displayEvent(event) {
     if (!event) return '';
     var html = '<div class="event">';
-    html += '<strong>' + (event.Tag || 'Event') + '</strong>';
-    if (event.Date) {
-        html += ' <span class="date">' + formatDate(event.Date) + '</span>';
+    var tag = event.tag || event.Tag || 'Event';
+    var date = event.date || event.Date;
+    var place = event.place || event.Place;
+
+    html += '<strong>' + tag + '</strong>';
+    if (date) {
+        html += ' <span class="date">' + formatDate(date) + '</span>';
     }
-    if (event.Place) {
-        html += ' <span class="place">' + formatPlace(event.Place) + '</span>';
+    if (place) {
+        html += ' <span class="place">' + formatPlace(place) + '</span>';
     }
     html += '</div>';
     return html;
