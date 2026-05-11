@@ -38,6 +38,14 @@ func main() {
 			Value: ".",
 			Usage: "Specify the top level directory of the Hugo project",
 		},
+		&cli.StringFlag{
+			Name:  "history-cache",
+			Usage: "Path to the historical events JSON cache file (default: <project>/data/history-events.json)",
+		},
+		&cli.BoolFlag{
+			Name:  "fetch-history",
+			Usage: "Fetch historical events from Wikidata when the cache file is absent",
+		},
 	}
 	app.ArgsUsage = " "
 	app.HideHelp = true

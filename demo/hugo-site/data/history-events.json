@@ -1,0 +1,471 @@
+[
+  {
+    "date": "1950-06-25",
+    "title": "Korean War begins",
+    "description": "North Korea invades South Korea, starting the Korean War.",
+    "location": "Korea",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1952-11-01",
+    "title": "First hydrogen bomb test",
+    "description": "The United States detonates the first thermonuclear weapon (Ivy Mike) at Enewetak Atoll.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1953-07-27",
+    "title": "Korean War armistice signed",
+    "description": "An armistice agreement is signed, ending active combat in the Korean War.",
+    "location": "Korea",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1955-12-01",
+    "title": "Rosa Parks refuses to give up her bus seat",
+    "description": "Rosa Parks is arrested in Montgomery, Alabama, sparking the Montgomery Bus Boycott.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1957-10-04",
+    "title": "Sputnik 1 launched",
+    "description": "The Soviet Union launches Sputnik 1, the first artificial Earth satellite.",
+    "location": "Soviet Union",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1961-04-12",
+    "title": "Yuri Gagarin becomes first human in space",
+    "description": "Soviet cosmonaut Yuri Gagarin becomes the first human to journey into outer space.",
+    "location": "Soviet Union",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1962-10-16",
+    "title": "Cuban Missile Crisis begins",
+    "description": "The United States discovers Soviet ballistic missile deployment in Cuba.",
+    "location": "Cuba",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1963-11-22",
+    "title": "Assassination of John F. Kennedy",
+    "description": "US President John F. Kennedy is assassinated in Dallas, Texas.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1964-07-02",
+    "title": "Civil Rights Act of 1964 signed",
+    "description": "US President Lyndon Johnson signs the Civil Rights Act, outlawing discrimination.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1965-02-21",
+    "title": "Assassination of Malcolm X",
+    "description": "Malcolm X is assassinated at the Audubon Ballroom in New York City.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1966-01-17",
+    "title": "Palomares B-52 crash",
+    "description": "A USAF B-52 collides with a KC-135 tanker over Spain, scattering hydrogen bombs.",
+    "location": "Spain",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1967-06-05",
+    "title": "Six-Day War begins",
+    "description": "Israel launches pre-emptive strikes against Egypt, Jordan, and Syria.",
+    "location": "Middle East",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1968-04-04",
+    "title": "Assassination of Martin Luther King Jr.",
+    "description": "Civil rights leader Martin Luther King Jr. is assassinated in Memphis, Tennessee.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1969-07-20",
+    "title": "Apollo 11 Moon Landing",
+    "description": "Astronauts Neil Armstrong and Buzz Aldrin become the first humans to walk on the Moon.",
+    "location": "Moon",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1972-06-17",
+    "title": "Watergate break-in",
+    "description": "Five men are arrested for breaking into the Democratic National Committee headquarters.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1973-01-27",
+    "title": "Paris Peace Accords signed",
+    "description": "The Paris Peace Accords are signed, ending the United States' direct involvement in the Vietnam War.",
+    "location": "France",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1974-08-09",
+    "title": "Richard Nixon resigns",
+    "description": "Richard Nixon becomes the first US President to resign, due to the Watergate scandal.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1975-04-30",
+    "title": "Fall of Saigon",
+    "description": "North Vietnamese forces capture Saigon, ending the Vietnam War.",
+    "location": "Vietnam",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1976-07-04",
+    "title": "United States Bicentennial",
+    "description": "The United States celebrates its 200th anniversary of independence.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1978-09-17",
+    "title": "Camp David Accords signed",
+    "description": "Egyptian President Sadat and Israeli PM Begin sign the Camp David Accords.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1979-11-04",
+    "title": "Iran hostage crisis begins",
+    "description": "Iranian students seize the US Embassy in Tehran, holding 52 Americans hostage.",
+    "location": "Iran",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1980-08-14",
+    "title": "Solidarity trade union formed in Poland",
+    "description": "Workers at the Lenin Shipyard in Gdańsk go on strike, founding the Solidarity movement.",
+    "location": "Poland",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1981-03-30",
+    "title": "Assassination attempt on Ronald Reagan",
+    "description": "President Ronald Reagan is shot outside the Washington Hilton Hotel.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1983-09-01",
+    "title": "Korean Air Lines Flight 007 shot down",
+    "description": "A Soviet jet shoots down a Korean Air Lines Boeing 747, killing all 269 on board.",
+    "location": "Soviet Union",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1984-07-28",
+    "title": "1984 Summer Olympics open in Los Angeles",
+    "description": "The Summer Olympic Games open in Los Angeles, boycotted by the Soviet Union.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1985-03-11",
+    "title": "Mikhail Gorbachev becomes Soviet leader",
+    "description": "Mikhail Gorbachev is named General Secretary of the Communist Party of the Soviet Union.",
+    "location": "Soviet Union",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1986-01-28",
+    "title": "Space Shuttle Challenger disaster",
+    "description": "Space Shuttle Challenger breaks apart 73 seconds after launch, killing all seven crew members.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1986-04-26",
+    "title": "Chernobyl nuclear disaster",
+    "description": "Reactor No. 4 at the Chernobyl Nuclear Power Plant explodes, causing the worst nuclear accident in history.",
+    "location": "Soviet Union",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1987-10-19",
+    "title": "Black Monday stock market crash",
+    "description": "Global stock markets crash on Black Monday, with the Dow Jones falling 22.6%.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1989-06-04",
+    "title": "Tiananmen Square massacre",
+    "description": "Chinese troops open fire on pro-democracy protesters in Tiananmen Square.",
+    "location": "China",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1989-11-09",
+    "title": "Fall of the Berlin Wall",
+    "description": "The Berlin Wall falls, marking the beginning of the end of the Cold War.",
+    "location": "Germany",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1990-08-02",
+    "title": "Iraq invades Kuwait",
+    "description": "Iraqi forces invade and occupy Kuwait, triggering the Gulf War.",
+    "location": "Kuwait",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1991-01-17",
+    "title": "Gulf War begins (Operation Desert Storm)",
+    "description": "Coalition forces launch Operation Desert Storm to liberate Kuwait from Iraqi occupation.",
+    "location": "Iraq",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1991-12-25",
+    "title": "Dissolution of the Soviet Union",
+    "description": "Mikhail Gorbachev resigns as president, formally dissolving the Soviet Union.",
+    "location": "Soviet Union",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1992-08-24",
+    "title": "Hurricane Andrew strikes Florida",
+    "description": "Hurricane Andrew makes landfall in South Florida, causing $27 billion in damage.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1993-02-26",
+    "title": "World Trade Center bombing",
+    "description": "A truck bomb explodes in the parking garage below the World Trade Center in New York City.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1994-04-06",
+    "title": "Rwandan genocide begins",
+    "description": "The assassination of Rwandan president Habyarimana triggers a genocide that kills 800,000 Tutsi.",
+    "location": "Rwanda",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1995-04-19",
+    "title": "Oklahoma City bombing",
+    "description": "A truck bomb destroys the Alfred P. Murrah Federal Building, killing 168 people.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1996-07-17",
+    "title": "TWA Flight 800 crashes",
+    "description": "TWA Flight 800 explodes over the Atlantic Ocean off Long Island, New York, killing all 230 aboard.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1997-07-01",
+    "title": "Hong Kong handover",
+    "description": "The United Kingdom transfers sovereignty over Hong Kong to China.",
+    "location": "Hong Kong",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1997-08-31",
+    "title": "Death of Princess Diana",
+    "description": "Diana, Princess of Wales, dies in a car crash in Paris.",
+    "location": "France",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1998-08-07",
+    "title": "US Embassy bombings in Africa",
+    "description": "Al-Qaeda bombs the US embassies in Nairobi, Kenya, and Dar es Salaam, Tanzania.",
+    "location": "Kenya",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1999-03-24",
+    "title": "NATO bombing of Yugoslavia begins",
+    "description": "NATO launches an air campaign against the Federal Republic of Yugoslavia.",
+    "location": "Yugoslavia",
+    "source": "Wikidata"
+  },
+  {
+    "date": "1999-12-31",
+    "title": "Y2K rollover",
+    "description": "The world transitions to the year 2000 without major computer failures.",
+    "location": "",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2001-09-11",
+    "title": "September 11 attacks",
+    "description": "Al-Qaeda hijackers crash planes into the World Trade Center and Pentagon, killing nearly 3,000 people.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2003-03-20",
+    "title": "Invasion of Iraq begins",
+    "description": "A US-led coalition invades Iraq to remove Saddam Hussein from power.",
+    "location": "Iraq",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2004-12-26",
+    "title": "Indian Ocean earthquake and tsunami",
+    "description": "A 9.1 magnitude earthquake triggers a massive tsunami killing over 230,000 people across 14 countries.",
+    "location": "Indian Ocean",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2005-08-29",
+    "title": "Hurricane Katrina strikes New Orleans",
+    "description": "Hurricane Katrina makes landfall, flooding New Orleans and killing over 1,800 people.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2007-06-29",
+    "title": "First iPhone released",
+    "description": "Apple releases the first iPhone, transforming the mobile industry.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2008-09-15",
+    "title": "Lehman Brothers bankruptcy",
+    "description": "Lehman Brothers files for bankruptcy, triggering a global financial crisis.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2009-01-20",
+    "title": "Barack Obama inaugurated as US President",
+    "description": "Barack Obama is inaugurated as the 44th President of the United States, the first African American to hold the office.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2010-01-12",
+    "title": "Haiti earthquake",
+    "description": "A 7.0 magnitude earthquake strikes Haiti, killing over 230,000 people.",
+    "location": "Haiti",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2010-04-20",
+    "title": "Deepwater Horizon oil spill begins",
+    "description": "An explosion on the Deepwater Horizon drilling rig triggers the largest marine oil spill in history.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2011-03-11",
+    "title": "Tōhoku earthquake and tsunami",
+    "description": "A 9.0 magnitude earthquake triggers a tsunami that kills over 15,000 people and causes the Fukushima nuclear disaster.",
+    "location": "Japan",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2011-05-02",
+    "title": "Osama bin Laden killed",
+    "description": "Al-Qaeda leader Osama bin Laden is killed by US special forces in Abbottabad, Pakistan.",
+    "location": "Pakistan",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2012-10-29",
+    "title": "Hurricane Sandy strikes the US East Coast",
+    "description": "Hurricane Sandy makes landfall in New Jersey, causing $65 billion in damage.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2013-04-15",
+    "title": "Boston Marathon bombing",
+    "description": "Two bombs explode near the finish line of the Boston Marathon, killing 3 and injuring 264.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2014-03-18",
+    "title": "Russia annexes Crimea",
+    "description": "Russia formally annexes Crimea following a disputed referendum.",
+    "location": "Ukraine",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2015-11-13",
+    "title": "Paris terrorist attacks",
+    "description": "Coordinated ISIS attacks across Paris kill 130 people.",
+    "location": "France",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2016-06-23",
+    "title": "Brexit referendum",
+    "description": "The United Kingdom votes to leave the European Union.",
+    "location": "United Kingdom",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2016-11-08",
+    "title": "Donald Trump elected US President",
+    "description": "Donald Trump defeats Hillary Clinton in the US presidential election.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2018-02-14",
+    "title": "Stoneman Douglas High School shooting",
+    "description": "A gunman kills 17 students and staff at Marjory Stoneman Douglas High School in Parkland, Florida.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2019-04-15",
+    "title": "Notre-Dame Cathedral fire",
+    "description": "A fire extensively damages Notre-Dame Cathedral in Paris.",
+    "location": "France",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2020-01-31",
+    "title": "United Kingdom leaves the European Union",
+    "description": "The United Kingdom formally leaves the European Union.",
+    "location": "United Kingdom",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2020-03-11",
+    "title": "COVID-19 declared a global pandemic",
+    "description": "The World Health Organization declares COVID-19 a pandemic.",
+    "location": "",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2021-01-06",
+    "title": "US Capitol stormed",
+    "description": "Supporters of President Trump storm the US Capitol building.",
+    "location": "United States",
+    "source": "Wikidata"
+  },
+  {
+    "date": "2022-02-24",
+    "title": "Russia invades Ukraine",
+    "description": "Russia launches a full-scale military invasion of Ukraine.",
+    "location": "Ukraine",
+    "source": "Wikidata"
+  }
+]

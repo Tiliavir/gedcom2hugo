@@ -3,6 +3,7 @@ package cmd
 import (
 	"bytes"
 	"errors"
+	"log"
 	"os"
 	"path/filepath"
 
@@ -43,6 +44,14 @@ func Generate(cx *cli.Context) error {
 	}
 
 	api := newAPIControl(cx)
+
+	// Load historical events cache (fetch from Wikidata if the cache is absent and
+	// --fetch-history is requested).
+	if histRepo, loadErr := loadHistoricalEvents(cx); loadErr != nil {
+		log.Printf("Warning: historical events not available: %v\n", loadErr)
+	} else {
+		api.histRepo = histRepo
+	}
 
 	err = api.buildFromGedcom(gc)
 	if err != nil {
@@ -97,6 +106,32 @@ func Generate(cx *cli.Context) error {
 	return nil
 }
 
+// loadHistoricalEvents resolves the cache path, optionally fetches events from Wikidata,
+// and returns a ready repository. An error is returned only when the cache cannot be read
+// after a potential fetch attempt.
+func loadHistoricalEvents(cx *cli.Context) (*historicalEventRepository, error) {
+	cachePath := cx.String("history-cache")
+	if cachePath == "" {
+		cachePath = filepath.Join(cx.String("project"), "data", "history-events.json")
+	}
+
+	// Fetch from Wikidata when explicitly requested and the cache is absent.
+	if cx.Bool("fetch-history") {
+		if _, err := os.Stat(cachePath); errors.Is(err, os.ErrNotExist) {
+			log.Printf("Fetching historical events from Wikidata → %s\n", cachePath)
+			if fetchErr := fetchAndCacheEvents(cachePath); fetchErr != nil {
+				log.Printf("Warning: could not fetch historical events: %v\n", fetchErr)
+			}
+		}
+	}
+
+	repo := &historicalEventRepository{}
+	if err := repo.loadFromFile(cachePath); err != nil {
+		return nil, err
+	}
+	return repo, nil
+}
+
 func configureForJsonHeaders(api *apiControl) error {
 	headers := filepath.Join(api.cx.String("project"), "/static/api/_headers")
 	file, err := os.Create(headers)
@@ -130,3 +165,4 @@ func readGedcom(cx *cli.Context) (*gedcom.Gedcom, error) {
 	}
 	return gc, nil
 }
+
