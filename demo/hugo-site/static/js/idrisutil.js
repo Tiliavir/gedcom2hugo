@@ -13,7 +13,7 @@ function formatPlace(placeStr) {
 function createPersonLink(person) {
     if (!person || !person.ID) return 'Unknown';
     var name = person.Name || 'Unknown';
-    return '<a href="/' + person.ID + '/">' + name + '</a>';
+    return '<a href="../' + person.ID + '/">' + name + '</a>';
 }
 
 function displayEvent(event) {

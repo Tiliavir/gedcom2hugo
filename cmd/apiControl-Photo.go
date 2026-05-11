@@ -2,12 +2,12 @@ package cmd
 
 import (
 	"encoding/json"
-	"fmt"
 	"html/template"
 	"image"
 	"log"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	"github.com/iand/gedcom"
@@ -60,7 +60,7 @@ func (api *apiControl) addPhotoForIndividual(o *gedcom.MediaRecord, i *individua
 
 	ir, err := api.getIndividualIndexEntry(i.ID)
 	if err != nil {
-		fmt.Printf("%s\n", err)
+		log.Printf("Warning: could not build individual photo index entry for %s: %v\n", i.ID, err)
 		return response
 	}
 	response.People = append(response.People, ir)
@@ -73,7 +73,7 @@ func (api *apiControl) addPhotoForFamily(o *gedcom.MediaRecord, f *familyRespons
 
 	fr, err := api.getFamilyIndexEntry(f.ID)
 	if err != nil {
-		fmt.Printf("%s\n", err)
+		log.Printf("Warning: could not build family photo index entry for %s: %v\n", f.ID, err)
 		return response
 	}
 	response.Families = append(response.Families, fr)
@@ -115,40 +115,16 @@ func (api *apiControl) exportPhotoAPI() error {
 	for id, photo := range api.photos {
 		photoIDs = append(photoIDs, id)
 		file := filepath.Join(photoAPIDir, strings.ToLower(id+".json"))
-		fh, err := os.Create(file)
-		if err != nil {
+		if err := writeJSONFile(file, photo); err != nil {
 			return err
 		}
-
-		j, err := json.Marshal(photo)
-		if err != nil {
-			_ = fh.Close()
-			return err
-		}
-		_, err = fh.Write(j)
-		if err != nil {
-			_ = fh.Close()
-			return err
-		}
-		_ = fh.Close()
 	}
+	sort.Strings(photoIDs)
+
 	file := filepath.Join(photoAPIDir, strings.ToLower("list.json"))
-	fh, err := os.Create(file)
-	if err != nil {
+	if err := writeJSONFile(file, photoIDs); err != nil {
 		return err
 	}
-
-	j, err := json.Marshal(photoIDs)
-	if err != nil {
-		_ = fh.Close()
-		return err
-	}
-	_, err = fh.Write(j)
-	if err != nil {
-		_ = fh.Close()
-		return err
-	}
-	_ = fh.Close()
 
 	return nil
 }
@@ -161,8 +137,8 @@ categories:
 lead_photo: "{{ .File }}"
 photo_key: "{{ .ID  }}"
 ---
-<script src="/js/jquery.min.js"></script>
-<script src="/js/photodisplay.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/photodisplay.js"></script>
 <script>
 $(document).ready(function(){
     photodisplay("{{ .ID }}")
@@ -187,19 +163,43 @@ $(document).ready(function(){
 		if err != nil {
 			return err
 		}
-		defer func(fh *os.File) {
-			_ = fh.Close()
-		}(fh)
 
 		tpl := template.New("photo")
 		tpl, err = tpl.Parse(photoPageTemplate)
 		if err != nil {
+			_ = fh.Close()
 			return err
 		}
-		err = tpl.Execute(fh, photo)
+		if err := tpl.Execute(fh, photo); err != nil {
+			_ = fh.Close()
+			return err
+		}
+		if err := fh.Close(); err != nil {
+			return err
+		}
 	}
 
 	return nil
+}
+
+func writeJSONFile(path string, v interface{}) error {
+	fh, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+
+	data, err := json.Marshal(v)
+	if err != nil {
+		_ = fh.Close()
+		return err
+	}
+
+	if _, err := fh.Write(data); err != nil {
+		_ = fh.Close()
+		return err
+	}
+
+	return fh.Close()
 }
 
 func getPhotoKeyFromObject(o *gedcom.MediaRecord) string {

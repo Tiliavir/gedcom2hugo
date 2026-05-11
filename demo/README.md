@@ -79,6 +79,24 @@ hugo server
 
 Then open http://localhost:1313 in your browser.
 
+## Hosting on GitHub Pages
+
+This repository includes a workflow at `.github/workflows/demo-pages.yml` that builds and deploys
+`demo/hugo-site` to GitHub Pages.
+
+Required GitHub repo setting:
+
+1. Open repository settings.
+2. Go to `Pages`.
+3. Set `Build and deployment` source to `GitHub Actions`.
+
+Deployment behavior:
+
+- The workflow runs on pushes to `master` (and manual dispatch).
+- It builds with a repository-aware base URL:
+   `https://<owner>.github.io/<repo>/`
+- It publishes the generated `demo/hugo-site/public` directory.
+
 ### Option 2: Using Python's HTTP Server
 
 If you don't have Hugo but have Python:

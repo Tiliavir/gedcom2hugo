@@ -7,14 +7,14 @@
 <h3>People</h3>
 <ul>
 {{ range where .Site.Pages "Section" "person" }}
-    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 {{ end }}
 </ul>
 
 <h3>Families</h3>
 <ul>
 {{ range where .Site.Pages "Section" "family" }}
-    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 {{ end }}
 </ul>
 {{ end }}

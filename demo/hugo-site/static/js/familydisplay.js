@@ -1,7 +1,7 @@
 // familydisplay.js - Display family information
 
 function familydisplay(id) {
-    $.getJSON('/api/family/' + id + '.json', function(data) {
+    $.getJSON('../api/family/' + id + '.json', function(data) {
         var html = '<div class="family-display">';
         
         // Family title

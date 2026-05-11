@@ -157,8 +157,8 @@ categories:
 title: "Source: {{ if .Title }}{{ .Title }}{{ end }}"
 {{ if .RefNum }}refnum: "{{ .RefNum }}"{{ end }}
 ---
-<script src="/js/jquery.min.js"></script>
-<script src="/js/sourcedisplay.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/sourcedisplay.js"></script>
 <script>
 $(document).ready(function(){
     sourcedisplay("{{ .ID }}")
