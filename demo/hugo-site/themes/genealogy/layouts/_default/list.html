@@ -2,7 +2,7 @@
 <h1>{{ .Title }}</h1>
 {{ .Content }}
 <ul class="page-list">
-{{ range .Pages }}
+{{ range .RegularPages.ByTitle }}
     <li>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     </li>

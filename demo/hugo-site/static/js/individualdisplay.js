@@ -3,34 +3,43 @@
 function individualdisplay(id) {
     $.getJSON('../api/individual/' + id + '.json', function(data) {
         var html = '<div class="individual-display">';
+        var ref = data.ref || data.Ref || {};
+        var events = data.events || data.Events || [];
+        var parents = data.parentsfamily || data.Parents || [];
+        var families = data.family || data.Spouses || [];
+        var notes = data.notes || data.Notes || [];
+        var refName = ref.name || ref.Name || 'Unknown';
+        var refPhoto = ref.photo || ref.Photo;
         
         // Name and basic info
-        html += '<h1>' + (data.Ref.Name || 'Unknown') + '</h1>';
+        html += '<h1>' + refName + '</h1>';
         
         // Portrait if available
-        if (data.Ref.Photo) {
-            html += '<div class="portrait"><img src="' + data.Ref.Photo + '" alt="Portrait"></div>';
+        if (refPhoto) {
+            html += '<div class="portrait"><img src="' + refPhoto + '" alt="Portrait"></div>';
         }
         
         // Life events
-        if (data.Events && data.Events.length > 0) {
+        if (events.length > 0) {
             html += '<div class="life-events"><h2>Life Events</h2>';
-            data.Events.forEach(function(event) {
+            events.forEach(function(event) {
                 html += displayEvent(event);
             });
             html += '</div>';
         }
         
         // Parents
-        if (data.Parents && data.Parents.length > 0) {
+        if (parents.length > 0) {
             html += '<div class="parents"><h2>Parents</h2>';
-            data.Parents.forEach(function(parent) {
+            parents.forEach(function(parent) {
                 html += '<div class="parent-family">';
-                if (parent.Husband) {
-                    html += '<div>Father: ' + createPersonLink(parent.Husband) + '</div>';
+                var father = parent.father || parent.Husband;
+                var mother = parent.mother || parent.Wife;
+                if (father) {
+                    html += '<div>Father: ' + createPersonLink(father) + '</div>';
                 }
-                if (parent.Wife) {
-                    html += '<div>Mother: ' + createPersonLink(parent.Wife) + '</div>';
+                if (mother) {
+                    html += '<div>Mother: ' + createPersonLink(mother) + '</div>';
                 }
                 html += '</div>';
             });
@@ -38,19 +47,25 @@ function individualdisplay(id) {
         }
         
         // Spouses and children
-        if (data.Spouses && data.Spouses.length > 0) {
+        if (families.length > 0) {
             html += '<div class="families"><h2>Family</h2>';
-            data.Spouses.forEach(function(family) {
+            families.forEach(function(family) {
                 html += '<div class="family">';
-                if (family.Husband && family.Husband.ID !== id) {
-                    html += '<div>Spouse: ' + createPersonLink(family.Husband) + '</div>';
+                var father = family.father || family.Husband;
+                var mother = family.mother || family.Wife;
+                var fatherID = father && (father.id || father.ID);
+                var motherID = mother && (mother.id || mother.ID);
+
+                if (father && fatherID !== id) {
+                    html += '<div>Spouse: ' + createPersonLink(father) + '</div>';
                 }
-                if (family.Wife && family.Wife.ID !== id) {
-                    html += '<div>Spouse: ' + createPersonLink(family.Wife) + '</div>';
+                if (mother && motherID !== id) {
+                    html += '<div>Spouse: ' + createPersonLink(mother) + '</div>';
                 }
-                if (family.Children && family.Children.length > 0) {
+                var children = family.children || family.Children || [];
+                if (children.length > 0) {
                     html += '<div class="children"><h3>Children</h3><ul>';
-                    family.Children.forEach(function(child) {
+                    children.forEach(function(child) {
                         html += '<li>' + createPersonLink(child) + '</li>';
                     });
                     html += '</ul></div>';
@@ -61,9 +76,9 @@ function individualdisplay(id) {
         }
         
         // Notes
-        if (data.Notes && data.Notes.length > 0) {
+        if (notes.length > 0) {
             html += '<div class="notes"><h2>Notes</h2>';
-            data.Notes.forEach(function(note) {
+            notes.forEach(function(note) {
                 html += '<p>' + note + '</p>';
             });
             html += '</div>';

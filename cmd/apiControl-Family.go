@@ -132,6 +132,7 @@ func (api *apiControl) exportFamilyAPI() error {
 func (api *apiControl) exportFamilyPages() error {
 
 	const familyPageTemplate = `---
+title: "{{ .Ref.Title }}"
 url: "/{{ .ID }}/"
 categories:
   - Family
