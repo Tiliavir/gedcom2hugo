@@ -94,6 +94,13 @@ func (api *apiControl) exportIndividualAPI() error {
 	return nil
 }
 
+// individualPageData bundles an individual API response with pre-rendered historical events HTML
+// for use in the person page template.
+type individualPageData struct {
+	*individualResponse
+	HistoricalEventsHTML template.HTML
+}
+
 func (api *apiControl) exportIndividualPages() error {
 	const personPageTemplate = `---
 title: "{{ .Ref.Name }}{{ if or .Ref.Birth .Ref.Death }} ({{ .Ref.Birth }} - {{ .Ref.Death }}){{ end }}"
@@ -105,6 +112,7 @@ categories:
 {{- end }}
 {{ if .Ref.Photo }}portrait: "{{ .Ref.Photo }}"{{end}}
 ---
+<link rel="stylesheet" href="/css/history-events.css">
 <script src="/js/jquery.min.js"></script>
 <script src="/js/idrisutil.js"></script>
 <script src="/js/individualdisplay.js"></script>
@@ -123,7 +131,13 @@ $(document).ready(function(){
 <div id="display"></div>
 
 <div id="raw"></div>
+
+{{ .HistoricalEventsHTML }}
 `
+
+	if err := api.exportHistoricalEventsCSS(); err != nil {
+		log.Printf("Warning: could not write history-events.css: %v\n", err)
+	}
 
 	personDir := filepath.Join(api.cx.String("project"), "content", "person")
 	err := os.MkdirAll(personDir, 0755)
@@ -142,15 +156,42 @@ $(document).ready(function(){
 			_ = fh.Close()
 		}(fh)
 
+		pageData := individualPageData{
+			individualResponse:   individual,
+			HistoricalEventsHTML: api.buildHistoricalEventsHTML(individual),
+		}
+
 		tpl := template.New("person")
 		tpl, err = tpl.Parse(personPageTemplate)
 		if err != nil {
 			return err
 		}
-		err = tpl.Execute(fh, individual)
+		err = tpl.Execute(fh, pageData)
 	}
 
 	return nil
+}
+
+// buildHistoricalEventsHTML returns the rendered HTML for historical events relevant to
+// the given individual. Returns empty string when no repository is loaded or no events match.
+func (api *apiControl) buildHistoricalEventsHTML(individual *individualResponse) template.HTML {
+	if api.histRepo == nil {
+		return ""
+	}
+	birthYear := extractYear(individual.Ref.Birth)
+	deathYear := extractYear(individual.Ref.Death)
+	events := api.histRepo.eventsForPerson(birthYear, deathYear)
+	return renderHistoricalEvents(events)
+}
+
+// exportHistoricalEventsCSS writes the historical events CSS file to the Hugo project.
+func (api *apiControl) exportHistoricalEventsCSS() error {
+	cssDir := filepath.Join(api.cx.String("project"), "static", "css")
+	if err := os.MkdirAll(cssDir, 0755); err != nil {
+		return err
+	}
+	cssPath := filepath.Join(cssDir, "history-events.css")
+	return os.WriteFile(cssPath, []byte(historicalEventsCSSContent), 0644)
 }
 
 // extractNames splits a full name into a given name and a family name.

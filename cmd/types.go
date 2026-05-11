@@ -14,6 +14,7 @@ type apiControl struct {
 	individuals individualResponses
 	families    familyResponses
 	photos      photoResponses
+	histRepo    *historicalEventRepository
 }
 
 type citationResponse struct {
