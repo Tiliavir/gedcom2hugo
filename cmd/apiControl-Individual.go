@@ -112,15 +112,15 @@ categories:
 {{- end }}
 {{ if .Ref.Photo }}portrait: "{{ .Ref.Photo }}"{{end}}
 ---
-<link rel="stylesheet" href="/css/history-events.css">
-<script src="/js/jquery.min.js"></script>
-<script src="/js/idrisutil.js"></script>
-<script src="/js/individualdisplay.js"></script>
+<link rel="stylesheet" href="../css/history-events.css">
+<script src="../js/jquery.min.js"></script>
+<script src="../js/idrisutil.js"></script>
+<script src="../js/individualdisplay.js"></script>
 
-<link rel="stylesheet" href="/js/photoswipe.css">
-<link rel="stylesheet" href="/js/default-skin/default-skin.css">
-<script src="/js/photoswipe.min.js"></script>
-<script src="/js/photoswipe-ui-default.min.js"></script>
+<link rel="stylesheet" href="../js/photoswipe.css">
+<link rel="stylesheet" href="../js/default-skin/default-skin.css">
+<script src="../js/photoswipe.min.js"></script>
+<script src="../js/photoswipe-ui-default.min.js"></script>
 
 <script>
 $(document).ready(function(){

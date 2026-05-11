@@ -1,7 +1,7 @@
 // individualdisplay.js - Display individual person information
 
 function individualdisplay(id) {
-    $.getJSON('/api/individual/' + id + '.json', function(data) {
+    $.getJSON('../api/individual/' + id + '.json', function(data) {
         var html = '<div class="individual-display">';
         
         // Name and basic info

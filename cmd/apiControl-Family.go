@@ -136,14 +136,14 @@ url: "/{{ .ID }}/"
 categories:
   - Family
 ---
-<script src="/js/jquery.min.js"></script>
-<script src="/js/idrisutil.js"></script>
-<script src="/js/familydisplay.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/idrisutil.js"></script>
+<script src="../js/familydisplay.js"></script>
 
-<link rel="stylesheet" href="/js/photoswipe.css">
-<link rel="stylesheet" href="/js/default-skin/default-skin.css">
-<script src="/js/photoswipe.min.js"></script>
-<script src="/js/photoswipe-ui-default.min.js"></script>
+<link rel="stylesheet" href="../js/photoswipe.css">
+<link rel="stylesheet" href="../js/default-skin/default-skin.css">
+<script src="../js/photoswipe.min.js"></script>
+<script src="../js/photoswipe-ui-default.min.js"></script>
 
 <script>
 $(document).ready(function(){
